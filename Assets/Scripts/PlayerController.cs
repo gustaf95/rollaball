@@ -24,4 +24,9 @@ public class PlayerController : MonoBehaviour {
         Vector3 movement = new Vector3(moveHorizontal, 0f, moveVertical);        
         rb.AddForce(movement * speed);
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        collision.gameObject.SetActive(false);
+    }
 }
