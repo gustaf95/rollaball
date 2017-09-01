@@ -32,3 +32,4 @@ packages/
 Library/metadata/*
 Library/ShaderCache/*
 Temp/
+Library/CrashedAssetImports.txt
