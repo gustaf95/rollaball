@@ -21,14 +21,17 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        DisplayCountText();
+    }
 
     private void FixedUpdate()
-    {
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
-        Vector3 movement = new Vector3(moveHorizontal, 0f, moveVertical);        
+    {
+
+        //float moveHorizontal = Input.GetAxis("Horizontal");
+        //float moveVertical = Input.GetAxis("Vertical");
+        float moveHorizontal = Input.acceleration.x;        float moveVertical = Input.acceleration.y;
+        Vector3 movement = new Vector3(moveHorizontal, 0f, moveVertical);
+        
         rb.AddForce(movement * speed);
     }
 
@@ -50,6 +53,6 @@ public class PlayerController : MonoBehaviour {
         }                
     }    void DisplayCountText()
     {
-        CountText.text = "Count: " + count.ToString();
+        CountText.text = "Count: " + count.ToString() + " x:"+ Input.acceleration.x.ToString() + " y:" + Input.acceleration.y.ToString()+ " z:" + Input.acceleration.z.ToString();
     }
 }
