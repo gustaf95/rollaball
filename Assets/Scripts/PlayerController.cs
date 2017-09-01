@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        collision.gameObject.SetActive(false);
+        if (collision.gameObject.CompareTag("PickUp"))
+            collision.gameObject.SetActive(false);
     }
 }
